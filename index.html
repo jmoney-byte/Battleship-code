@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Battleship</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>BATTLESHIP</h1>
+      <p id="status-message">Place your ships to begin</p>
+    </header>
+
+    <div id="setup-phase">
+      <div id="ship-selector">
+        <h3>Ships to Place</h3>
+        <div id="ship-list"></div>
+        <div id="placement-controls">
+          <button id="rotate-btn" title="Rotate ship (R)">↻ Rotate (R)</button>
+          <button id="random-btn">🎲 Random</button>
+          <button id="clear-btn">✖ Clear</button>
+        </div>
+        <button id="start-btn" disabled>Start Game</button>
+      </div>
+      <div class="board-container">
+        <h3>Your Board</h3>
+        <div id="setup-board" class="board"></div>
+      </div>
+    </div>
+
+    <div id="game-phase" class="hidden">
+      <div class="boards-wrapper">
+        <div class="board-container">
+          <h3>Enemy Waters <span id="enemy-ships-left"></span></h3>
+          <div id="enemy-board" class="board"></div>
+        </div>
+        <div class="board-container">
+          <h3>Your Fleet <span id="player-ships-left"></span></h3>
+          <div id="player-board" class="board"></div>
+        </div>
+      </div>
+      <div id="game-log">
+        <h3>Battle Log</h3>
+        <div id="log-entries"></div>
+      </div>
+    </div>
+
+    <div id="game-over-modal" class="hidden">
+      <div class="modal-content">
+        <h2 id="game-over-title"></h2>
+        <p id="game-over-stats"></p>
+        <button id="play-again-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
